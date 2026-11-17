@@ -1,33 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:background="#17212B" android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#17212B"
+    android:orientation="vertical">
 
-    <!-- Верхняя панель (Шапка) в стиле Telegram -->
+    <!-- Верхняя шапка Telegram -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/main_page_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="56dp"
         android:background="#242F3D"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Wollket" android:textColor="#FFFFFF" android:textSize="20sp" android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wollket"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- Вкладки (Чаты, Контакты и т.д.) -->
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/main_tabs"
+    <!-- Строка поиска в стиле Telegram -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#242F3D"
+        android:paddingHorizontal="12dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_glass_card"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:text="🔍  Поиск по чатам..."
+            android:textColor="#8E97B0"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Вкладки (CHATS / REQUESTS) -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/main_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="#242F3D"
         app:tabIndicatorColor="#5288C1"
         app:tabSelectedTextColor="#5288C1"
-        app:tabTextColor="#99AAB5" />
+        app:tabTextColor="#99AAB5"
+        app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <!-- Переключатель страниц -->
+    <!-- Основной контент (список чатов) -->
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/tabs_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Нижняя панель навигации (как в клиентах Telegram) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#242F3D"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="💬 Чаты"
+            android:textColor="#5288C1"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="👥 Контакты"
+            android:textColor="#99AAB5"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="⚙️ Настройки"
+            android:textColor="#99AAB5"
+            android:textSize="12sp" />
+
+    </LinearLayout>
 
 </LinearLayout>
