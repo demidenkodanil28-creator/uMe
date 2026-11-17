@@ -50,14 +50,10 @@ dependencies {
     // circle image view library
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
-    // cropping image library
-    implementation 'com.github.CanHub:Android-Image-Cropper:2.8.0'
     // Picasso library
     implementation 'com.squareup.picasso:picasso:2.71828'
     // HTTP & HTTP/2 client for Android
     implementation 'com.squareup.okhttp3:okhttp:4.0.1'
-    // Image Compressor library
-    implementation 'com.github.zetbaitsu:Compressor:v2.1.0'
     //RememberEditText
     implementation 'cn.zhaiyifan:rememberedittext:0.9.0'
     // for stylist toast
