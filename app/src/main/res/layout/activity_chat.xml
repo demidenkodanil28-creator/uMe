@@ -4,9 +4,9 @@
     android:layout_height="match_parent"
     android:background="#0F1226">
 
-    <!-- Верхняя панель чата -->
+    <!-- Верхняя панель чата со старым ID chatToolbar -->
     <LinearLayout
-        android:id="@+id/chatTopBar"
+        android:id="@+id/chatToolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/bg_glass_card"
@@ -45,8 +45,9 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
+            <!-- Статус со старым ID ChatConnectionTV -->
             <TextView
-                android:id="@+id/chat_seen"
+                android:id="@+id/ChatConnectionTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="в сети"
@@ -55,17 +56,17 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Список сообщений -->
+    <!-- Список сообщений со старым ID message_list -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/messages_list"
+        android:id="@+id/message_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/chatBottomBar"
-        android:layout_below="@id/chatTopBar"
+        android:layout_below="@id/chatToolbar"
         android:clipToPadding="false"
         android:padding="8dp" />
 
-    <!-- Нижняя панель ввода сообщения -->
+    <!-- Нижняя панель ввода со старыми ID -->
     <LinearLayout
         android:id="@+id/chatBottomBar"
         android:layout_width="match_parent"
@@ -78,7 +79,7 @@
         android:elevation="8dp">
 
         <ImageView
-            android:id="@+id/chat_add_btn"
+            android:id="@+id/c_send_image_BTN"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:padding="8dp"
@@ -86,7 +87,7 @@
             android:tint="#8E97B0" />
 
         <EditText
-            android:id="@+id/chat_message_area"
+            android:id="@+id/c_input_message"
             android:layout_width="0dp"
             android:layout_height="44dp"
             android:layout_weight="1"
@@ -99,7 +100,7 @@
             android:textSize="14sp" />
 
         <ImageView
-            android:id="@+id/chat_send_btn"
+            android:id="@+id/c_send_message_BTN"
             android:layout_width="44dp"
             android:layout_height="44dp"
             android:background="@drawable/bg_gradient_pill"
