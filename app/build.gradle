@@ -44,8 +44,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:20.0.0'
     implementation 'com.google.firebase:firebase-storage:19.1.0'
 
-    // FirebaseUI for Firebase Realtime Database
-    implementation 'com.firebaseui:firebase-ui-database:6.2.1'
+    // FirebaseUI for Firebase Realtime Database (доступен в MavenCentral)
+    implementation 'com.firebaseui:firebase-ui-database:7.2.0'
 
     // circle image view library
     implementation 'de.hdodenhof:circleimageview:3.0.0'
@@ -56,8 +56,8 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     // HTTP & HTTP/2 client for Android
     implementation 'com.squareup.okhttp3:okhttp:4.0.1'
-    // Image Compressor library
-    implementation 'com.github.zetbaitsu:Compressor:2.1.0'
+    // Image Compressor library (доступен в MavenCentral)
+    implementation 'id.zelory:compressor:3.0.1'
     //RememberEditText
     implementation 'cn.zhaiyifan:rememberedittext:0.9.0'
     // for stylist toast
