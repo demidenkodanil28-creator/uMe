@@ -4,9 +4,9 @@
     android:layout_height="match_parent"
     android:background="#0F1226">
 
-    <!-- Верхняя панель чата со старым ID chatToolbar -->
+    <!-- Верхняя панель чата со старым ID chats_appbar -->
     <LinearLayout
-        android:id="@+id/chatToolbar"
+        android:id="@+id/chats_appbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/bg_glass_card"
@@ -45,7 +45,6 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- Статус со старым ID ChatConnectionTV -->
             <TextView
                 android:id="@+id/ChatConnectionTV"
                 android:layout_width="wrap_content"
@@ -56,17 +55,17 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Список сообщений со старым ID message_list -->
+    <!-- Список сообщений -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/message_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/chatBottomBar"
-        android:layout_below="@id/chatToolbar"
+        android:layout_below="@id/chats_appbar"
         android:clipToPadding="false"
         android:padding="8dp" />
 
-    <!-- Нижняя панель ввода со старыми ID -->
+    <!-- Нижняя панель ввода -->
     <LinearLayout
         android:id="@+id/chatBottomBar"
         android:layout_width="match_parent"
