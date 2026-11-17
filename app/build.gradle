@@ -7,7 +7,7 @@ apply plugin: "kotlin-noarg"
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.infobox.hasnat.ume.ume"
+        applicationId "com.company.wollket"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
