@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "908936382165",
+    "firebase_url": "https://wollket-default-rtdb.firebaseio.com",
+    "project_id": "wollket",
+    "storage_bucket": "wollket.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908936382165:android:141708ee821706020e845c",
+        "android_client_info": {
+          "package_name": "com.company.wollket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn9p2DAmIkd_3MnrZN2Rmzg2i_exCQkKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
