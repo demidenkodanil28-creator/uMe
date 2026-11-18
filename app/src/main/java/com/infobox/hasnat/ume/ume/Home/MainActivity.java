@@ -287,6 +287,5 @@ public class MainActivity extends AppCompatActivity {
         }
         backPressed = System.currentTimeMillis();
     }
-    //End Back button press for exit...
+    //EndBck button press for exit...
 }
-here
