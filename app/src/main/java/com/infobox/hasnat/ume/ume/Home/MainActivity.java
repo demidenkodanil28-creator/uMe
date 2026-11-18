@@ -29,16 +29,17 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firebaseauth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
-import com.google.infobox.hasnat.ume.ume.About.AboutActivity;
-import com.google.infobox.hasnat.ume.ume.Adapter.TabsPagerAdapter;
-import com.google.infobox.hasnat.ume.ume.Friends.FriendsActivity;
-import com.google.infobox.hasnat.ume.ume.LoginReg.LoginActivity;
-import com.google.infobox.hasnat.ume.ume.ProfileSetting.SettingsActivity;
-import com.google.infobox.hasnat.ume.ume.Search.SearchActivity;
+
+import com.infobox.hasnat.ume.ume.About.AboutActivity;
+import com.infobox.hasnat.ume.ume.Adapter.TabsPagerAdapter;
+import com.infobox.hasnat.ume.ume.Friends.FriendsActivity;
+import com.infobox.hasnat.ume.ume.LoginReg.LoginActivity;
+import com.infobox.hasnat.ume.ume.ProfileSetting.SettingsActivity;
+import com.infobox.hasnat.ume.ume.Search.SearchActivity;
 import com.infobox.hasnat.ume.ume.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -58,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
     public FirebaseUser currentUser;
 
     private ConnectivityReceiver connectivityReceiver;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
         nTabLayout = findViewById(R.id.main_tabs);
         nTabLayout.setupWithViewPager(mViewPager);
-        //setupTabIcons();
 
         /**
          * Set Home Activity Toolbar Name
@@ -92,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
         mToolbar = findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
-        //getSupportActionBar().setTitle("uMe");
 
         // Обработка нажатий на нижнюю панель навигации
         LinearLayout btnChats = findViewById(R.id.nav_chats_btn);
@@ -125,21 +123,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-
-        // ending onCreate
-    }
-
-    private void setupTabIcons() {
-        //nTabLayout.getTabAt(0).setText("CHATS");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         currentUser = mAuth.getCurrentUser();
-        //checking logging, if not login redirect to Login ACTIVITY
         if (currentUser == null) {
-            logOutUser(); // Return to Login activity
+            logOutUser();
         }
         if (currentUser != null) {
             userDatabaseReference.child("active_now").setValue("true");
@@ -149,7 +140,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        //Register Connectivity Broadcast receiver
         connectivityReceiver = new ConnectivityReceiver();
         IntentFilter intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         registerReceiver(connectivityReceiver, intentFilter);
@@ -158,8 +148,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        //Unregister Connectivity Broadcast receiver
-        //google kore aro jana lagbe, bag ache exhane
         if (currentUser != null) {
             userDatabaseReference.child("active_now").setValue(ServerValue.TIMESTAMP);
         }
@@ -168,7 +156,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // from onStop
         if (currentUser != null) {
             userDatabaseReference.child("active_now").setValue(ServerValue.TIMESTAMP);
         }
@@ -181,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-    // tool bar action menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -214,7 +200,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (item.getItemId() == R.id.main_logout) {
-            // Custom Alert Dialog
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.logout_dialog, null);
 
@@ -247,7 +232,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    // Broadcast receiver for network checking
     public class ConnectivityReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -265,9 +249,7 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         });
-                // Changing action button text color
                 snackbar.setActionTextColor(Color.BLACK);
-                // Changing message text color
                 View view = snackbar.getView();
                 view.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.colorPrimary));
                 TextView textView = view.findViewById(R.id.snackbar_text);
@@ -277,16 +259,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // This method is used to detect back button
     @Override
     public void onBackPressed() {
         if (TIME_LIMIT + backPressed > System.currentTimeMillis()) {
             super.onBackPressed();
-            //Toast.makeText(getApplicationContext(), "Exited", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getApplicationContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
         }
         backPressed = System.currentTimeMillis();
     }
-    //End Back button press for exit...
 }
