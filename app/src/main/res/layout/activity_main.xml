@@ -71,7 +71,7 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <!-- Нижняя панель навигации -->
+    <!-- Нижняя панель навигации (кликабельные кнопки) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -81,9 +81,13 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/nav_chats_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:orientation="vertical">
             <TextView
@@ -92,6 +96,7 @@
                 android:text="💬"
                 android:textSize="16sp" />
             <TextView
+                android:id="@+id/nav_chats_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Чаты"
@@ -101,9 +106,13 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/nav_contacts_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:orientation="vertical">
             <TextView
@@ -112,6 +121,7 @@
                 android:text="👥"
                 android:textSize="16sp" />
             <TextView
+                android:id="@+id/nav_contacts_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Контакты"
@@ -120,9 +130,13 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/nav_settings_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:orientation="vertical">
             <TextView
@@ -131,6 +145,7 @@
                 android:text="⚙️"
                 android:textSize="16sp" />
             <TextView
+                android:id="@+id/nav_settings_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Настройки"
