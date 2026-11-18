@@ -39,6 +39,7 @@ import com.google.infobox.hasnat.ume.ume.Friends.FriendsActivity;
 import com.google.infobox.hasnat.ume.ume.LoginReg.LoginActivity;
 import com.google.infobox.hasnat.ume.ume.ProfileSetting.SettingsActivity;
 import com.google.infobox.hasnat.ume.ume.Search.SearchActivity;
+import com.infobox.hasnat.ume.ume.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -287,5 +288,5 @@ public class MainActivity extends AppCompatActivity {
         }
         backPressed = System.currentTimeMillis();
     }
-    //EndBck button press for exit...
+    //End Back button press for exit...
 }
