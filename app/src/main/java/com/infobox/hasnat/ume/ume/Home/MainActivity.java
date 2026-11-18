@@ -29,7 +29,7 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firebaseauth.FirebaseUser;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
@@ -74,20 +74,12 @@ public class MainActivity extends AppCompatActivity {
                     .child("users").child(user_uID);
         }
 
-        /**
-         * Tabs >> Viewpager for MainActivity
-         */
-
         mViewPager = findViewById(R.id.tabs_pager);
         mTabsPagerAdapter = new TabsPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mTabsPagerAdapter);
 
         nTabLayout = findViewById(R.id.main_tabs);
         nTabLayout.setupWithViewPager(mViewPager);
-
-        /**
-         * Set Home Activity Toolbar Name
-         */
 
         mToolbar = findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
